@@ -20,6 +20,16 @@ class Tag
     @id = results.first()['id'].to_i
   end
 
+  def total_amount()
+      sql = "SELECT amount
+            FROM transactions
+            WHERE transactions.tag_id = $1"
+      values = [@id]
+      results = (SqlRunner.run(sql, values)).map {|x| x.values}
+      return results.flatten.inject(0) {|sum, x| sum + x.to_i}
+  end
+
+
   def self.all()
     sql = "SELECT * FROM tags"
     results = SqlRunner.run( sql )

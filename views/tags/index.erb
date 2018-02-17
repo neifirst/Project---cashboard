@@ -1,16 +1,16 @@
-<h1>Victims</h1>
+<h1>Categories</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Speed</th>
+    <th>Total Amount</th>
   </tr>
-  <% for victim in @victims %>
+  <% for tag in @tags %>
   <tr>
-    <td><a href="/victims/<%= victim.id %>"><%= victim.name %></a></td>
+    <td><%= tag.name %></a></td>
     <td>|</td>
-    <td><%= victim.run_speed %></td>
+    <td><%= tag.total_amount %></td>
   </tr>
   <% end %>
 </table>
