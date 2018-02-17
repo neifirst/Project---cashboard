@@ -1,0 +1,75 @@
+body {
+  background: url('/images/dollarclear.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+header .row {
+  border: 2px ridge white;
+  border-right: 0;
+  border-left: 0;
+  margin: 10px -20px 20px -20px;
+  padding: 0 10px;
+  background-color: rgba(176, 217, 220, 0.5);
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto Slab', serif;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 19px 50px 19px 50px;
+  color: rgb(79, 121, 156);
+  text-shadow: 1px 1px 1px DarkBlue;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 100px;
+
+}
+
+header p {
+  font-size: 20px;
+  padding: 0 22px;
+  margin: 0;
+  text-shadow: 1px 1px 1px DarkBlue;
+}
+
+
+a, a:link, a:visited {
+  color: rgb(79, 121, 156);
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: rgb(117, 180, 172);
+}
+
+.jumbotron {
+  display: flex;
+  align-items: left;
+  border: 1px solid rgb(117, 180, 172);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-size: cover;
+  color: black;
+  height: 550px;
+  margin: 40px 40px 20px 40px;
+  padding: 0;
+  overflow-x: scroll;
+}
+
+.jumbotron .container-fluid {
+  margin: 5px
+}
+
+.jumbotron .container-fluid h1 {
+  font-size: 24px;
+
+}

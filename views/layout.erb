@@ -2,44 +2,34 @@
 <html>
 <head>
   <title>CashBoard</title>
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
-
-  <!-- <link rel="icon" href="/images/hazard.png" />
-
-  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css"> -->
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+  <link rel="icon" href="/images/gold.png" />
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
 
 
 <body>
 
-<main class="flex flex--row">
-  <nav>
+  <header class="container-fluid">
+    <div class="row">
+      <h1 class="col-sm-4">CashBoard</h1>
+      <nav class="col-sm-15 text-center">
+        <p><a href="/">Home</a></p>
+        <p><a href="/transactions/index">All Transactions</a></p>
+        <p><a href="/transactions/new">New Transaction</a></p>
+        <p><a href="/tags/index">Categories</a></p>
+      </nav>
+    </div>
+  </header>
 
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/transactions/index">All Transactions</a>
-      </li>
-      <li>
-        <a href="/transactions/new">New Transaction</a>
-      </li>
-      <li>
-        <a href="/tags/index">Categories</a>
-      </li>
-    </ul>
-
-  </nav>
-
-  <section id="content">
-  <%= yield %>
+  <section class="jumbotron">
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </section>
 
-  </main>
 
 </body>
 
