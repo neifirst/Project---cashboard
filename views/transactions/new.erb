@@ -1,0 +1,25 @@
+<h1>Enter new transaction</h1>
+
+<form action="/transactions/index" method="post">
+
+  <label for="vendor">Vendor</label>
+  <input type="text" name="vendor" id="vendor">
+
+  <label for="amount">Amount</label>
+  <input type="text" name="amount" id="amount">
+
+
+  <label for="tag">Select a category:</label>
+  <select name="tag">
+    <% for tag in @tags %>
+    <option value="<%= tag.name %>"><%=tag.name%></option>
+    <% end %>
+  </select>
+
+  <label for="details">Details</label>
+  <input type="text" name="details" id="details">
+
+  <input type="submit" value="Save Transaction"/>
+
+
+</form>
