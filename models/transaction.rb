@@ -19,10 +19,20 @@ class Transaction
     sql = "INSERT INTO transactions(vendor, amount, tag_id, details)
           VALUES($1, $2, $3, $4)
           RETURNING id"
-    values = [@vendor, @amount, @tag_id, @details]
+    values = [@vendor, ((100 * @amount.to_r).to_i), @tag_id, @details]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
+
+
+  def get_tag()
+    sql = "SELECT name
+          FROM tags
+          WHERE tags.id = $1"
+    values = [@tag_id]
+    return ((SqlRunner.run(sql, values)).values)[0][0]
+  end
+
 
 
   def self.all()
@@ -31,11 +41,14 @@ class Transaction
     return results.map { |x| Transaction.new(x) }
   end
 
+
   def self.total_amount()
     sql = "SELECT amount FROM transactions"
     results = (SqlRunner.run(sql)).map {|x| x.values}
-    return results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    pence = results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    return '%.2f' % (pence.to_i/100.0)
   end
+
 
   def self.find( id )
     sql = "SELECT * FROM transactions

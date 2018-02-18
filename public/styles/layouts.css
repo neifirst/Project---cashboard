@@ -5,7 +5,7 @@
   margin-bottom: 20px;
 }
 
-.home h2 {
+.home h2, .all_trans h2 {
   font-size: 20px;
   text-align: center;
 }

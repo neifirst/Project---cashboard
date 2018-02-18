@@ -21,14 +21,21 @@ class Tag
   end
 
   def total_amount()
-      sql = "SELECT amount
-            FROM transactions
-            WHERE transactions.tag_id = $1"
-      values = [@id]
-      results = (SqlRunner.run(sql, values)).map {|x| x.values}
-      return results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    sql = "SELECT amount
+          FROM transactions
+          WHERE transactions.tag_id = $1"
+    values = [@id]
+    results = (SqlRunner.run(sql, values)).map {|x| x.values}
+    return results.flatten.inject(0) {|sum, x| sum + x.to_i}
   end
 
+  # def get_name()
+  #   sql = "SELECT name
+  #         FROM tags
+  #         WHERE id = $1"
+  #   values = [@id]
+  #   return ((SqlRunner.run(sql, values)).values)[0]
+  # end
 
   def self.all()
     sql = "SELECT * FROM tags"

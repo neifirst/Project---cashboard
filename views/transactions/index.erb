@@ -2,14 +2,14 @@
 
   <h1>All Transactions</h1>
 
-  <p>Running Total: <%= Transaction.total_amount %></p>
+  <h2>Running Total: <%= "£#{Transaction.total_amount}" %></h2>
 
   <% @transactions.each do |transaction| %>
 
     <p>Date and Time: <%= transaction.date_time %></p>
     <p>Vendor: <%= transaction.vendor %></p>
-    <p>Amount: <%= transaction.amount %></p>
-    <p>Category: <%= transaction.tag_id %></p>
+    <p>Amount: <%= "£#{'%.2f' % (transaction.amount.to_i/100.0)}" %></p>
+    <p>Category: <%= transaction.get_tag %></p>
 
   <% end %>
 

@@ -13,7 +13,7 @@ CREATE TABLE transactions
   id SERIAL primary key,
   date_time TIMESTAMP(0) DEFAULT now(),
   vendor VARCHAR(255),
-  amount INT,
+  amount FLOAT,
   tag_id INT REFERENCES tags(id),
   details TEXT
 );
