@@ -1,25 +1,28 @@
-<h1>Enter new transaction</h1>
+<div class="new_trans">
 
-<form action="/transactions/index" method="post">
+  <h1>Enter new transaction</h1>
 
-  <label for="vendor">Vendor</label>
-  <input type="text" name="vendor" id="vendor">
+  <form action="/transactions/index" method="post">
 
-  <label for="amount">Amount</label>
-  <input type="text" name="amount" id="amount">
+    <label for="vendor">Vendor</label>
+    <input type="text" name="vendor" id="vendor">
 
-
-  <label for="tag">Select a category:</label>
-  <select name="tag">
-    <% for tag in @tags %>
-    <option value="<%= tag.name %>"><%=tag.name%></option>
-    <% end %>
-  </select>
-
-  <label for="details">Details</label>
-  <input type="text" name="details" id="details">
-
-  <input type="submit" value="Save Transaction"/>
+    <label for="amount">Amount</label>
+    <input type="text" name="amount" id="amount">
 
 
-</form>
+    <label for="tag">Select a category:</label>
+    <select name="tag">
+      <% for tag in @tags %>
+      <option value="<%= tag.name %>"><%=tag.name%></option>
+      <% end %>
+    </select>
+
+    <label for="details">Details</label>
+    <input type="text" name="details" id="details">
+
+    <input type="submit" value="Save Transaction"/>
+
+
+  </form>
+</div>

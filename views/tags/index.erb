@@ -1,16 +1,20 @@
-<h1>Categories</h1>
+<div class="all_cats">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Total Amount</th>
-  </tr>
-  <% for tag in @tags %>
-  <tr>
-    <td><%= tag.name %></a></td>
-    <td>|</td>
-    <td><%= tag.total_amount %></td>
-  </tr>
-  <% end %>
-</table>
+  <h1>Categories</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Total Amount</th>
+    </tr>
+    <% for tag in @tags %>
+    <tr>
+      <td><%= tag.name %></a></td>
+      <td>|</td>
+      <td><%= tag.total_amount %></td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

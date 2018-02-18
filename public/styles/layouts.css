@@ -1,0 +1,23 @@
+.home h1, .all_trans h1, .new_trans h1, .all_cats h1 {
+  font-size: 30px;
+  color: rgb(79, 121, 156);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.home img {
+  margin-top: 75px;
+  margin-left: 0;
+}
+
+.home label {
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 10px;
+  color: rgb(79, 121, 156);
+}

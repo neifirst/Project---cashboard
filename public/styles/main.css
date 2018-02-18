@@ -15,22 +15,27 @@ header .row {
   margin: 10px -20px 20px -20px;
   padding: 0 10px;
   background-color: rgba(176, 217, 220, 0.5);
-  display: flex;
   align-items: center;
   font-family: 'Roboto Slab', serif;
 }
 
+.img1 {
+  height: 50px;
+  width: 50px;
+  margin: 16px 0px 0px 45px;
+}
+
 header h1 {
   font-size: 36px;
-  margin: 19px 50px 19px 50px;
+  margin: 19px 50px 19px 5px;
   color: rgb(79, 121, 156);
-  text-shadow: 1px 1px 1px DarkBlue;
 }
 
 header nav {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 100px;
+  display: inline-flex;
+  justify-content: space-between;
+  margin-right: 50px;
+  margin-top: 22px;
 
 }
 
@@ -38,7 +43,6 @@ header p {
   font-size: 20px;
   padding: 0 22px;
   margin: 0;
-  text-shadow: 1px 1px 1px DarkBlue;
 }
 
 
@@ -53,13 +57,12 @@ a:hover, a:active, a:focus {
 
 .jumbotron {
   display: flex;
-  align-items: left;
   border: 1px solid rgb(117, 180, 172);
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   background-size: cover;
   color: black;
-  height: 550px;
+  height: 600px;
   margin: 40px 40px 20px 40px;
   padding: 0;
   overflow-x: scroll;
@@ -67,9 +70,6 @@ a:hover, a:active, a:focus {
 
 .jumbotron .container-fluid {
   margin: 5px
-}
-
-.jumbotron .container-fluid h1 {
-  font-size: 24px;
-
+  width: 100%;
+  text-align: center;
 }
