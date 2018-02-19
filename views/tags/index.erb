@@ -5,14 +5,12 @@
   <table>
     <tr>
       <th>Name</th>
-      <th></th>
       <th>Total Amount</th>
     </tr>
     <% for tag in @tags %>
     <tr>
       <td><%= tag.name %></a></td>
-      <td>|</td>
-      <td><%= tag.total_amount %></td>
+      <td><%= "£#{'%.2f' % (tag.total_amount.to_i/100.0)}"%></td>
     </tr>
     <% end %>
   </table>

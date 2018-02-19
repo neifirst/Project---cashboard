@@ -1,0 +1,7 @@
+<p>Show transaction details</p>
+
+<p>Date/Time: <%=@transaction.date_time%></p>
+<p>Vendor: <%=@transaction.vendor%></p>
+<p>Amount: <%= "£#{'%.2f' % (@transaction.amount.to_i/100.0)}" %></p>
+<p>Category: <%=@transaction.get_tag%></p>
+<p>Details: <%=@transaction.details%></p>

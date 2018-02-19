@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 
 class Transaction
 
-  attr_accessor( :vendor, :amount, :tag_id )
+  attr_accessor( :vendor, :amount, :tag_id, :details)
   attr_reader(:id, :date_time)
 
   def initialize( options )
@@ -33,6 +33,12 @@ class Transaction
     return ((SqlRunner.run(sql, values)).values)[0][0]
   end
 
+  def delete()
+    sql = "DELETE FROM transactions
+          WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
 
   def self.all()

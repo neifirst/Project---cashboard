@@ -29,13 +29,13 @@ class Tag
     return results.flatten.inject(0) {|sum, x| sum + x.to_i}
   end
 
-  # def get_name()
-  #   sql = "SELECT name
-  #         FROM tags
-  #         WHERE id = $1"
-  #   values = [@id]
-  #   return ((SqlRunner.run(sql, values)).values)[0]
-  # end
+  def get_name()
+    sql = "SELECT name
+          FROM tags
+          WHERE id = $1"
+    values = [@id]
+    return ((SqlRunner.run(sql, values)).values)[0]
+  end
 
   def self.all()
     sql = "SELECT * FROM tags"
