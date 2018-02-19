@@ -33,25 +33,25 @@ get "/transactions/:id" do
   erb(:"transactions/show")
 end
 
-# # edit
-#
-# get "/pizza-orders/:id/edit" do
-#   @order = PizzaOrder.find(params[:id])
-#   @toppings = ["Margherita", "Vegetarian", "Italian Sausage", "Pepperoni"]
-#   erb(:edit)
-# end
-#
-# # update
-#
-# post "/pizza-orders/:id" do
-#   order = PizzaOrder.new(params)
-#   order.update()
-#   redirect to "/pizza-orders"
-# end
+#  edit
+
+get "/transactions/:id/edit" do
+  @transaction = Transaction.find(params[:id])
+  @tags = Tag.all
+  erb(:"transactions/edit")
+end
+
+# update
+
+post "/transactions/:id" do
+  transaction = Transaction.new(params)
+  transaction.update()
+  redirect to "/transactions/index"
+end
 
 # destroy
 
 post "/transactions/:id/delete" do
-  @transaction = Transaction.delete(params[:id])
+  Transaction.find(params[:id]).delete()
   redirect to "/transactions/index"
 end

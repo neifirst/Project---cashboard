@@ -11,7 +11,7 @@
     <input type="text" name="amount" id="amount">
 
 
-    <label for="tag">Select a category:</label>
+    <label for="tag_id">Select a category:</label>
     <select name="tag_id">
       <% for tag in @tags %>
       <option value="<%= tag.id %>"><%=tag.name%></option>

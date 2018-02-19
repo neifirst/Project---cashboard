@@ -13,6 +13,7 @@
       <th>Category</th>
       <th>Details</th>
       <th></th>
+      <th></th>
 
     </tr>
     <% @transactions.each do |transaction| %>
@@ -22,7 +23,11 @@
       <td><%= "£#{'%.2f' % (transaction.amount.to_i/100.0)}" %></td>
       <td><%= transaction.get_tag %></td>
       <td><%= transaction.details %></td>
-      <td><p><a href="/transactions/<%= transaction.id %>">Show</a></p></td>
+      <td><form method="POST" action="/transactions/<%=transaction.id%>/delete">
+        <input type="submit" name="delete" value="Delete"/>
+      </form></td>
+      <td><a href="/transactions/<%= transaction.id %>/edit">Edit</a></td>
+
 
 
     </tr>

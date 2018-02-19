@@ -1,0 +1,33 @@
+<div class="edit_trans">
+
+
+  <p>Edit Transaction</p>
+
+  <form action="/transactions/<%= @transaction.id %>" method="post">
+
+
+    <label for="vendor">Vendor</label>
+    <input type="text" name="vendor" id="vendor" value="<%= @transaction.vendor %>"/>
+
+    <label for="amount">Amount</label>
+    <input type="text" name="amount" id="amount" value="<%= @transaction.amount %>"/>
+
+    <label for="tag_id">Select a Category</label>
+    <select name="tag_id">
+
+      <% for tag in @tags %>
+      <option value="<%= tag.id %>"
+        <%= "selected" if tag == @transaction.tag_id %>><%= tag.name %></option>
+      <% end %>
+
+    </select>
+
+    <label for="details">Details</label>
+    <input type="text" name="details" id="details" value="<%= @transaction.details %>"/>
+
+
+    <input type="submit" value="Save Changes"/>
+
+  </form>
+
+</div>
