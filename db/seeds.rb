@@ -64,7 +64,7 @@ tag9.save
 
 tran1 = Transaction.new({
   "vendor" => "Tesco",
-  "amount" => "34.01",
+  "amount" => "34.99",
   "tag_id" => tag1.id,
   "details" => "Weekly shop"
 })
@@ -73,7 +73,7 @@ tran1.save()
 
 tran2 = Transaction.new({
   "vendor" => "Amazon",
-  "amount" => "5.99",
+  "amount" => "24.97",
   "tag_id" => tag5.id,
   "details" => "Bed Head hair stuff x 3"
 })
@@ -82,7 +82,7 @@ tran2.save()
 
 tran3 = Transaction.new({
   "vendor" => "Blackfriars",
-  "amount" => "10.50",
+  "amount" => "2.20",
   "tag_id" => tag8.id,
   "details" => "Diet Coke"
 })
