@@ -20,7 +20,7 @@
     <tr>
       <td><%= transaction.date_time %></td>
       <td><%= transaction.vendor %></td>
-      <td><%= "£#{'%.2f' % (transaction.amount.to_i/100.0)}" %></td>
+      <td><%= transaction.amount %></td>
       <td><%= transaction.get_tag %></td>
       <td><%= transaction.details %></td>
       <td><form method="POST" action="/transactions/<%=transaction.id%>/delete">
