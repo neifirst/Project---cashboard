@@ -10,7 +10,7 @@
     <input type="text" name="vendor" id="vendor" value="<%= @transaction.vendor %>"/>
 
     <label for="amount">Amount</label>
-    <input type="text" name="amount" id="amount" value="<%= @transaction.amount %>"/>
+    <input type="text" name="amount" id="amount" value="<%= '%.2f' % (@transaction.amount.to_i/100.0) %>"/>
 
     <label for="tag_id">Select a Category</label>
     <select name="tag_id">

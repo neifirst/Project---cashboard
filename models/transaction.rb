@@ -38,7 +38,7 @@ class Transaction
     sql = "UPDATE transactions
           SET(vendor, amount, tag_id, details) = ($1, $2, $3, $4)
           WHERE id = $5"
-    values = [@vendor, @amount, @tag_id, @details, @id]
+    values = [@vendor, ((100 * @amount.to_f).to_i), @tag_id, @details, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -50,12 +50,7 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
-  def convert_to_rational
-    sql = "SELECT amount
-          FROM transactions
-          WHERE id = $1"
-    values = [@id]
-    return ((100 * SqlRunner.run(sql, values).to_r).to_i)
+
 
 
   def self.all()
