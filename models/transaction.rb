@@ -42,11 +42,17 @@ class Transaction
 
   end
 
-  def get_month_name()
-    sql = ""
-    results = SqlRunner.run(sql)
-    return results
+
+  def self.total_amount_by_month(month)
+    sql = "SELECT amount
+          FROM transactions
+          WHERE EXTRACT(month FROM date_time) = $1"
+    values = [month]
+    results = (SqlRunner.run(sql, values)).map {|x| x.values}
+    pence = results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    return '%.2f' % (pence.to_i/100.0)
   end
+
 
   def update()
     sql = "UPDATE transactions

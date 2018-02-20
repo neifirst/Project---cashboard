@@ -32,6 +32,7 @@ end
 get "/transactions/by_month/:month" do
   @transactions = Transaction.get_by_month(params[:month])
   @monthname = Date::MONTHNAMES[params[:month].to_i]
+  @month = params[:month].to_i
   erb(:"transactions/show")
 end
 

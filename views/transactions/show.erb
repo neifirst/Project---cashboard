@@ -3,7 +3,7 @@
 
   <h1><%="All Transactions for #{@monthname}"  %></h1>
 
-  <h2>Running Total: <%= "£" %></h2>
+  <h2>Running Total: <%= "£#{Transaction.total_amount_by_month(@month)}" %></h2>
   <h3><%= "WARNING! OVER BUDGET!" if (Transaction.total_amount).to_i > 60 %></h3>
 
   <div style="align-items: center">
@@ -53,9 +53,9 @@
       <td><%= transaction.get_tag %></td>
       <td><%= transaction.details %></td>
       <td><form method="POST" action="/transactions/<%=transaction.id%>/delete">
-        <input type="submit" name="delete" value="Delete"/>
+        <input class="bin" type="image" name="delete" src="/images/delete.png"/>
       </form></td>
-      <td><a href="/transactions/<%= transaction.id %>/edit">Edit</a></td>
+      <td><a href="/transactions/<%= transaction.id %>/edit"><img src="/images/edit.png" alt="Edit" width="18" height="18" border="0"></a></td>
 
 
 
