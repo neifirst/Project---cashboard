@@ -3,6 +3,25 @@
   <h1>All Transactions</h1>
 
   <h2>Running Total: <%= "£#{Transaction.total_amount}" %></h2>
+  <h3><%= "WARNING! OVER BUDGET!" if (Transaction.total_amount).to_i > 60 %></h3>
+
+
+  <div class="row" class="dates" style="align-items: center">
+
+    <a class="col-sm-1" href="/transactions/by_month/1">JAN</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">FEB</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">MAR</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">APR</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">MAY</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">JUN</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">JUL</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">AUG</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">SEP</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">OCT</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">NOV</a>
+    <a class="col-sm-1" href="/transactions/by_month/1">DEC</a>
+
+  </div>
 
 
   <table>

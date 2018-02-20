@@ -33,6 +33,15 @@ class Transaction
     return ((SqlRunner.run(sql, values)).values)[0][0]
   end
 
+  def self.get_by_month(month)
+    sql = "SELECT * FROM transactions
+          WHERE EXTRACT(month FROM date_time) = $1"
+    values = [month]
+    results = SqlRunner.run( sql, values )
+    return results.map {|x| Transaction.new(x)}
+
+  end
+
 
   def update()
     sql = "UPDATE transactions
@@ -49,8 +58,6 @@ class Transaction
     values = [@id]
     SqlRunner.run(sql, values)
   end
-
-
 
 
   def self.all()

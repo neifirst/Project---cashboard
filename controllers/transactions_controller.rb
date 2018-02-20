@@ -28,8 +28,8 @@ end
 
 # show
 
-get "/transactions/:id" do
-  @transaction = Transaction.find(params['id'])
+get "/transactions/by_month/:month" do
+  @transactions = Transaction.get_by_month(params[:month])
   erb(:"transactions/show")
 end
 

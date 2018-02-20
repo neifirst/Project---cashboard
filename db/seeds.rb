@@ -25,46 +25,54 @@ tag3 = Tag.new({
 tag3.save
 
 tag4 = Tag.new({
-  "name" => "Clothing"
+  "name" => "Transport"
   })
 
 tag4.save
 
 tag5 = Tag.new({
-  "name" => "Health and Beauty"
+  "name" => "Clothing"
   })
 
 tag5.save
 
 tag6 = Tag.new({
-  "name" => "Education"
+  "name" => "Health and Beauty"
   })
 
 tag6.save
 
 tag7 = Tag.new({
-  "name" => "Entertainment"
+  "name" => "Education"
   })
 
 tag7.save
 
 tag8 = Tag.new({
-  "name" => "Treats and Luxuries"
+  "name" => "Entertainment"
   })
 
 tag8.save
 
 tag9 = Tag.new({
-  "name" => "Miscellaneous"
+  "name" => "Treats and Luxuries"
   })
 
 tag9.save
+
+tag10 = Tag.new({
+  "name" => "Miscellaneous"
+  })
+
+tag10.save
+
+
 
 
 
 tran1 = Transaction.new({
   "vendor" => "Tesco",
-  "amount" => "34.99",
+  "amount" => "35.99",
   "tag_id" => tag1.id,
   "details" => "Weekly shop"
 })
@@ -73,7 +81,7 @@ tran1.save()
 
 tran2 = Transaction.new({
   "vendor" => "Amazon",
-  "amount" => "24.97",
+  "amount" => "25.97",
   "tag_id" => tag5.id,
   "details" => "Bed Head hair stuff x 3"
 })

@@ -1,7 +1,38 @@
-<p>Show transaction details</p>
+<div class="all_trans_date">
 
-<p>Date/Time: <%=@transaction.date_time%></p>
-<p>Vendor: <%=@transaction.vendor%></p>
-<p>Amount: <%= "£#{'%.2f' % (@transaction.amount.to_i/100.0)}" %></p>
-<p>Category: <%=@transaction.get_tag%></p>
-<p>Details: <%=@transaction.details%></p>
+  <h1><%="All Transactions for"  %></h1>
+
+  <h2>Running Total: <%= "£" %></h2>
+
+
+  <table>
+    <tr>
+      <th>Date/Time</th>
+      <th>Vendor</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Details</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+    <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.date_time %></td>
+      <td><%= transaction.vendor %></td>
+      <td><%= "£#{'%.2f' % (transaction.amount.to_i/100.0)}" %></td>
+      <td><%= transaction.get_tag %></td>
+      <td><%= transaction.details %></td>
+      <td><form method="POST" action="/transactions/<%=transaction.id%>/delete">
+        <input type="submit" name="delete" value="Delete"/>
+      </form></td>
+      <td><a href="/transactions/<%= transaction.id %>/edit">Edit</a></td>
+
+
+
+    </tr>
+
+
+    <% end %>
+
+  </table>
