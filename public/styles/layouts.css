@@ -1,11 +1,11 @@
-.home h1, .all_trans h1, .new_trans h1, .all_cats h1 {
+.home h1, .all_trans h1, .new_trans h1, .all_cats h1, .all_trans_cat h1, .all_trans_date h1 {
   font-size: 30px;
   color: rgb(79, 121, 156);
   text-align: center;
   margin-bottom: 20px;
 }
 
-.home h2, .all_trans h2 {
+.home h2, .all_trans h2, .new_trans h2, .all_cats h2, .all_trans_cat h2, .all_trans_date h2 {
   font-size: 20px;
   text-align: center;
 }
@@ -16,12 +16,6 @@ h3 {
   margin-top: 0;
 }
 
-.all_trans div {
-  width: 900px;
-  margin-left: 250px;
-  margin-top: 40px;
-  font-weight: 200;
-}
 
 .home img {
   margin-top: 75px;
@@ -35,13 +29,24 @@ h3 {
   color: rgb(79, 121, 156);
 }
 
-.all_trans table {
+.all_trans table, .all_trans_cat table, .all_trans_date table {
   border: 1px solid rgb(79, 121, 156);
   border-radius: 10px;
   background-color: white;
   width: 1000px;
   margin-top: 15px;
   margin-left: 140px;
+}
+
+.all_trans table.dates, .all_trans_cat table.dates, .all_trans_date table.dates {
+
+  border: 0;
+  width: 800px;
+  margin: 40px auto 0;
+}
+
+tr.daterow {
+  background: none;
 }
 
 .all_cats table {
@@ -55,11 +60,34 @@ h3 {
 
 th {
   text-align: center;
-  background-color: rgb(224, 254, 240);
+  background-color: rgb(201, 227, 242);
   border-top: 1px solid rgb(79, 121, 156);
   border-bottom: 1px solid rgb(79, 121, 156);
 }
 
 tr:nth-child(odd) {
-  background: rgb(243, 250, 239);
+  background: rgb(222, 235, 242);
+}
+
+.new_trans div {
+  margin-left: 140px;
+  margin-top: 60px;
+}
+
+.new_trans label {
+  font-size: 18px;
+}
+
+.new_trans .row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#first {
+  margin-top: 100px;
+}
+
+.currencyinput {
+    float: left;
+    margin-left: 2px;
 }

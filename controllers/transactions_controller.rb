@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require('date')
 require_relative( '../models/transaction.rb')
 require_relative( '../models/tag.rb')
 
@@ -30,6 +31,7 @@ end
 
 get "/transactions/by_month/:month" do
   @transactions = Transaction.get_by_month(params[:month])
+  @monthname = Date::MONTHNAMES[params[:month].to_i]
   erb(:"transactions/show")
 end
 

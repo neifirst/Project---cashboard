@@ -26,8 +26,10 @@ class Tag
           WHERE transactions.tag_id = $1"
     values = [@id]
     results = (SqlRunner.run(sql, values)).map {|x| x.values}
-    return results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    pence = results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    return '%.2f' % (pence.to_i/100.0)
   end
+
 
   def get_name()
     sql = "SELECT name

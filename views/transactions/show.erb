@@ -1,8 +1,37 @@
 <div class="all_trans_date">
 
-  <h1><%="All Transactions for"  %></h1>
+
+  <h1><%="All Transactions for #{@monthname}"  %></h1>
 
   <h2>Running Total: <%= "£" %></h2>
+  <h3><%= "WARNING! OVER BUDGET!" if (Transaction.total_amount).to_i > 60 %></h3>
+
+  <div style="align-items: center">
+
+    <table class="dates">
+      <tr class="daterow">
+
+      <td><a href="/transactions/index">ALL</a></td>
+      <td><a href="/transactions/by_month/1">JAN</a></td>
+      <td><a href="/transactions/by_month/2">FEB</a></td>
+      <td><a href="/transactions/by_month/3">MAR</a></td>
+      <td><a href="/transactions/by_month/4">APR</a></td>
+      <td><a href="/transactions/by_month/5">MAY</a></td>
+      <td><a href="/transactions/by_month/6">JUN</a></td>
+      <td><a href="/transactions/by_month/7">JUL</a></td>
+      <td><a href="/transactions/by_month/8">AUG</a></td>
+      <td><a href="/transactions/by_month/9">SEP</a></td>
+      <td><a href="/transactions/by_month/10">OCT</a></td>
+      <td><a href="/transactions/by_month/11">NOV</a></td>
+      <td><a href="/transactions/by_month/12">DEC</a></td>
+
+      </tr>
+    </table>
+
+
+
+  </div>
+
 
 
   <table>

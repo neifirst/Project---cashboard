@@ -82,7 +82,7 @@ tran1.save()
 tran2 = Transaction.new({
   "vendor" => "Amazon",
   "amount" => "25.97",
-  "tag_id" => tag5.id,
+  "tag_id" => tag6.id,
   "details" => "Bed Head hair stuff x 3"
 })
 
@@ -91,7 +91,7 @@ tran2.save()
 tran3 = Transaction.new({
   "vendor" => "Blackfriars",
   "amount" => "2.20",
-  "tag_id" => tag8.id,
+  "tag_id" => tag9.id,
   "details" => "Diet Coke"
 })
 

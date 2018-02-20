@@ -42,6 +42,11 @@ class Transaction
 
   end
 
+  def get_month_name()
+    sql = ""
+    results = SqlRunner.run(sql)
+    return results
+  end
 
   def update()
     sql = "UPDATE transactions
