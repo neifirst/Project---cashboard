@@ -5,7 +5,8 @@ DROP TABLE tags CASCADE;
 CREATE TABLE tags
 (
   id SERIAL primary key,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  budget INT
 );
 
 CREATE TABLE transactions

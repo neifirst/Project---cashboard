@@ -1,0 +1,14 @@
+<div class="edit_bud">
+
+  <p><%= "Edit Budget for #{@tag_name}"%></p>
+
+  <form action="/budget/<%= @tag.id %>" method="post">
+    
+    <input style="display: none" type="text" name="name" id="name" value="<%= @tag.name %>"/>
+    <label for="budget">Budget</label>
+    <input type="text" name="budget" id="budget" value="<%= '%.2f' % (@tag.budget.to_i/100.0) %>"/>
+    <input type="submit" value="Save Changes"/>
+
+  </form>
+
+</div>

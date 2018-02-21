@@ -15,6 +15,7 @@ class Transaction
     @details = options['details']
   end
 
+
   def save()
     sql = "INSERT INTO transactions(vendor, amount, tag_id, details)
           VALUES($1, $2, $3, $4)
@@ -24,7 +25,6 @@ class Transaction
     @id = results.first()['id'].to_i
   end
 
-
   def get_tag()
     sql = "SELECT name
           FROM tags
@@ -33,6 +33,33 @@ class Transaction
     return ((SqlRunner.run(sql, values)).values)[0][0]
   end
 
+  def update()
+    sql = "UPDATE transactions
+          SET(vendor, amount, tag_id, details) = ($1, $2, $3, $4)
+          WHERE id = $5"
+    values = [@vendor, ((100 * @amount.to_f).to_i), @tag_id, @details, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM transactions
+          WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    results = SqlRunner.run( sql )
+    return results.map { |x| Transaction.new(x) }
+  end
+
+  def self.total_amount()
+    sql = "SELECT amount FROM transactions"
+    results = (SqlRunner.run(sql)).map {|x| x.values}
+    pence = results.flatten.inject(0) {|sum, x| sum + x.to_i}
+    return '%.2f' % (pence.to_i/100.0)
+  end
 
   def self.get_by_month(month)
     sql = "SELECT * FROM transactions
@@ -42,7 +69,6 @@ class Transaction
     return results.map {|x| Transaction.new(x)}
 
   end
-
 
   def self.total_amount_by_month(month)
     sql = "SELECT amount
@@ -54,39 +80,6 @@ class Transaction
     return '%.2f' % (pence.to_i/100.0)
   end
 
-
-  def update()
-    sql = "UPDATE transactions
-          SET(vendor, amount, tag_id, details) = ($1, $2, $3, $4)
-          WHERE id = $5"
-    values = [@vendor, ((100 * @amount.to_f).to_i), @tag_id, @details, @id]
-    SqlRunner.run(sql, values)
-  end
-
-
-  def delete()
-    sql = "DELETE FROM transactions
-          WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
-
-  def self.all()
-    sql = "SELECT * FROM transactions"
-    results = SqlRunner.run( sql )
-    return results.map { |x| Transaction.new(x) }
-  end
-
-
-  def self.total_amount()
-    sql = "SELECT amount FROM transactions"
-    results = (SqlRunner.run(sql)).map {|x| x.values}
-    pence = results.flatten.inject(0) {|sum, x| sum + x.to_i}
-    return '%.2f' % (pence.to_i/100.0)
-  end
-
-
   def self.find( id )
     sql = "SELECT * FROM transactions
     WHERE id = $1"
@@ -95,13 +88,10 @@ class Transaction
     return Transaction.new( results.first )
   end
 
-
   def self.delete_all
     sql = "DELETE FROM transactions"
     SqlRunner.run( sql )
   end
-
-
 
 
 end

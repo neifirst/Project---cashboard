@@ -1,11 +1,11 @@
-.home h1, .all_trans h1, .new_trans h1, .all_cats h1, .all_trans_cat h1, .all_trans_date h1 {
+.home h1, .all_trans h1, .new_trans h1, .all_cats h1, .all_trans_cat h1, .all_trans_date h1, .budget h1 {
   font-size: 30px;
   color: rgb(79, 121, 156);
   text-align: center;
   margin-bottom: 20px;
 }
 
-.home h2, .all_trans h2, .new_trans h2, .all_cats h2, .all_trans_cat h2, .all_trans_date h2 {
+.home h2, .all_trans h2, .new_trans h2, .all_cats h2, .all_trans_cat h2, .all_trans_date h2, .budget h2 {
   font-size: 20px;
   text-align: center;
 }
@@ -46,11 +46,11 @@ h3 {
 }
 
 
-.all_cats table {
+.budget table {
   border: 1px solid rgb(79, 121, 156);
   border-radius: 10px;
   background-color: white;
-  width: 400px;
+  width: 402px;
   margin-top: 50px;
   margin-left: 440px;
 }

@@ -3,8 +3,7 @@
   <h1>All Transactions</h1>
 
   <h2>Running Total: <%= "£#{Transaction.total_amount}" %></h2>
-  <h3><%= "WARNING! OVER BUDGET!" if (Transaction.total_amount).to_i > 60 %></h3>
-
+  <h3><%= "WARNING! OVER BUDGET!" if (Transaction.total_amount).to_i > Tag.total_budget.to_i  %></h3>
 
   <div style="align-items: center">
 
@@ -28,10 +27,7 @@
       </tr>
     </table>
 
-
-
   </div>
-
 
   <table>
     <tr>
@@ -42,8 +38,8 @@
       <th>Details</th>
       <th></th>
       <th></th>
-
     </tr>
+
     <% @transactions.each do |transaction| %>
     <tr class="translist">
       <td><%= transaction.date_time %></td>
@@ -51,20 +47,13 @@
       <td><%= "£#{'%.2f' % (transaction.amount.to_i/100.0)}" %></td>
       <td><%= transaction.get_tag %></td>
       <td><%= transaction.details %></td>
-
       <td><form method="POST" action="/transactions/<%=transaction.id%>/delete">
         <input class="bin" type="image" name="delete" src="/images/delete.png"/>
       </form></td>
       <td><a href="/transactions/<%= transaction.id %>/edit"><img src="/images/edit.png" alt="Edit" width="18" height="18" border="0"></a></td>
-
-
     </tr>
-
-
     <% end %>
 
   </table>
-
-
 
 </div>

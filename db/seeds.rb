@@ -7,61 +7,71 @@ Tag.delete_all()
 
 
 tag1 = Tag.new({
-  "name" => "Food"
+  "name" => "Food",
+  "budget" => "200.00"
   })
 
 tag1.save
 
 tag2 = Tag.new({
-  "name" => "Utilities"
+  "name" => "Utilities",
+  "budget" => "100.00"
   })
 
 tag2.save
 
 tag3 = Tag.new({
-  "name" => "Housing"
+  "name" => "Housing",
+  "budget" => "150.00"
   })
 
 tag3.save
 
 tag4 = Tag.new({
-  "name" => "Transport"
+  "name" => "Transport",
+  "budget" => "50.00"
   })
 
 tag4.save
 
 tag5 = Tag.new({
-  "name" => "Clothing"
+  "name" => "Clothing",
+  "budget" => "50.00"
   })
 
 tag5.save
 
 tag6 = Tag.new({
-  "name" => "Health and Beauty"
+  "name" => "Health and Beauty",
+  "budget" => "30.00"
   })
 
 tag6.save
 
 tag7 = Tag.new({
-  "name" => "Education"
+  "name" => "Education",
+  "budget" => "50.00"
   })
 
 tag7.save
 
 tag8 = Tag.new({
-  "name" => "Entertainment"
+  "name" => "Entertainment",
+  "budget" => "70.00"
   })
 
 tag8.save
 
 tag9 = Tag.new({
-  "name" => "Treats and Luxuries"
+  "name" => "Treats and Luxuries",
+  "budget" => "50.00"
   })
 
 tag9.save
 
 tag10 = Tag.new({
-  "name" => "Miscellaneous"
+  "name" => "Miscellaneous",
+  "budget" => "50.00"
   })
 
 tag10.save
@@ -96,6 +106,24 @@ tran3 = Transaction.new({
 })
 
 tran3.save()
+
+tran4 = Transaction.new({
+  "vendor" => "Past Horizons",
+  "amount" => "70.98",
+  "tag_id" => tag7.id,
+  "details" => "Work Tools"
+})
+
+tran4.save()
+
+tran5 = Transaction.new({
+  "vendor" => "Millets",
+  "amount" => "68.99",
+  "tag_id" => tag5.id,
+  "details" => "Waterproofs"
+})
+
+tran5.save()
 
 
 
