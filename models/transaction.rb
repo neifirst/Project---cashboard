@@ -33,6 +33,7 @@ class Transaction
     return ((SqlRunner.run(sql, values)).values)[0][0]
   end
 
+
   def self.get_by_month(month)
     sql = "SELECT * FROM transactions
           WHERE EXTRACT(month FROM date_time) = $1"
